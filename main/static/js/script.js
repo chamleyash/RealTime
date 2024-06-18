@@ -40,14 +40,12 @@ window.addEventListener("scroll", function () {
  * Modal handling
  */
 var loginModal = document.getElementById("loginModal");
-var registerModal = document.getElementById("registerModal");
 
 // Get the button that opens the login modal
 var loginBtn = document.querySelector(".btn-sign_in");
 
 // Get the <span> elements that close the modals
-var closeLogin = loginModal.getElementsByClassName("close")[0];
-var closeRegister = registerModal.getElementsByClassName("close")[0];
+var closeLogin = loginModal.getElementsByClassName("icon-close")[0];
 
 // When the user clicks the button, open the login modal 
 loginBtn.onclick = function() {
@@ -59,25 +57,9 @@ closeLogin.onclick = function() {
   loginModal.style.display = "none";
 }
 
-closeRegister.onclick = function() {
-  registerModal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == loginModal) {
     loginModal.style.display = "none";
   }
-  if (event.target == registerModal) {
-    registerModal.style.display = "none";
-  }
 }
 
-// Handle new user registration link
-var registerLink = document.getElementById("registerLink");
-
-registerLink.onclick = function(event) {
-  event.preventDefault();
-  loginModal.style.display = "none";
-  registerModal.style.display = "block";
-}

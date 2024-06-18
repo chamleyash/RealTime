@@ -137,23 +137,8 @@
           <span>Log-in</span>
 
         </button>
-
-        <div id="loginModal" class="modal">
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <form>
-              <h2>Login</h2>
-              <label for="username">Username</label>
-              <input type="text" id="username" name="username" required>
-              <label for="password">Password</label>
-              <input type="password" id="password" name="password" required>
-              <button type="submit">Login</button>
-              <p>New user? <a href="#" id="registerLink">Register here</a></p>
-            </form>
-          </div>
-        </div>
       
-        <!-- The Registration Modal -->
+        <!-- The Registration Modal
         <div id="registerModal" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
@@ -164,9 +149,10 @@
               <label for="newPassword">Password</label>
               <input type="password" id="newPassword" name="newPassword" required>
               <button type="submit">Register</button>
+              <p>Already Registered? <a href="#" id="registerLink">LogIn here</a></p>
             </form>
           </div>
-        </div>
+        </div>-->
 
       </div>
 
@@ -174,7 +160,34 @@
 
   </header>
 
-
+  <div id="loginModal" class="wrapper">
+    <span class="icon-close">
+        <ion-icon name="close"></ion-icon>
+    </span>
+    <div class="form-box login">
+        <h2>Login</h2>
+        <form action="#">
+            <div class="input-box">
+                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                <input type="email" required>
+                <label>Email</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" required>
+                <label>Password</label>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember Me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn1">Login</button>
+            <div class="login-register">
+                <p>Don't Have an Account? <a href="#" class="register-link">Register Here</a></p>
+            </div>
+        </form>
+    </div>
+</div>
 
 
 
