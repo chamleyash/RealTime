@@ -1823,12 +1823,15 @@ body.active { overflow-y: hidden; }
   align-items: center;
   cursor: pointer;
   z-index: 1;
+  transition: .5s;
+  border-bottom-left-radius: 15px;
 }
 
 .wrapper .icon-close:hover {
   color: black;
   background: white;
   border-bottom-left-radius: 15px;
+  transition: .5s;
 }
 
 /* Style the form */
@@ -1923,6 +1926,13 @@ body.active { overflow-y: hidden; }
   font-size: 1em;
   color: black;
   font-weight: 500;
+  transition: .5s;
+}
+
+.btn1:hover{
+  background: black;
+  color: white;
+  transition: .5s;
 }
 
 .login-register {
