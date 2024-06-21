@@ -62,3 +62,18 @@ window.onclick = function(event) {
     loginModal.style.display = "none";
   }
 }
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('.join-btn').addEventListener('click', function() {
+    window.location.href = 'Tournament.html';
+  });
+});
