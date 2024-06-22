@@ -1,79 +1,74 @@
-'use strict';
+document.addEventListener('DOMContentLoaded', function() {
+  'use strict';
 
-/**
- * element toggle function
- */
-const elemToggleFunc = function (elem) { elem.classList.toggle("active"); }
+  const elemToggleFunc = function (elem) {
+    if (elem) {
+      elem.classList.toggle("active");
+    }
+  }
 
-/**
- * navbar variables
- */
-const navbar = document.querySelector("[data-nav]");
-const navOpenBtn = document.querySelector("[data-nav-open-btn]");
-const navCloseBtn = document.querySelector("[data-nav-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
+  const navbar = document.querySelector("[data-nav]");
+  const navOpenBtn = document.querySelector("[data-nav-open-btn]");
+  const navCloseBtn = document.querySelector("[data-nav-close-btn]");
+  const overlay = document.querySelector("[data-overlay]");
 
-const navElemArr = [navOpenBtn, navCloseBtn, overlay];
+  const navElemArr = [navOpenBtn, navCloseBtn, overlay];
 
-for (let i = 0; i < navElemArr.length; i++) {
-  navElemArr[i].addEventListener("click", function () {
-    elemToggleFunc(navbar);
-    elemToggleFunc(overlay);
-    elemToggleFunc(document.body);
+  navElemArr.forEach(elem => {
+    if (elem) {
+      elem.addEventListener("click", function () {
+        elemToggleFunc(navbar);
+        elemToggleFunc(overlay);
+        elemToggleFunc(document.body);
+      });
+    }
   });
-}
 
-/**
- * go top
- */
-const goTopBtn = document.querySelector("[data-go-top]");
+  const goTopBtn = document.querySelector("[data-go-top]");
 
-window.addEventListener("scroll", function () {
-  if (window.scrollY >= 800) {
-    goTopBtn.classList.add("active");
-  } else {
-    goTopBtn.classList.remove("active");
+  window.addEventListener("scroll", function () {
+    if (window.scrollY >= 800) {
+      goTopBtn.classList.add("active");
+    } else {
+      goTopBtn.classList.remove("active");
+    }
+  });
+
+  const loginModal = document.getElementById("loginModal");
+  const loginBtn = document.querySelector(".btn-sign_in");
+  const closeLogin = loginModal ? loginModal.getElementsByClassName("icon-close")[0] : null;
+
+  if (loginBtn) {
+    loginBtn.onclick = function() {
+      if (loginModal) loginModal.style.display = "block";
+    }
   }
-});
 
-/**
- * Modal handling
- */
-var loginModal = document.getElementById("loginModal");
-
-// Get the button that opens the login modal
-var loginBtn = document.querySelector(".btn-sign_in");
-
-// Get the <span> elements that close the modals
-var closeLogin = loginModal.getElementsByClassName("icon-close")[0];
-
-// When the user clicks the button, open the login modal 
-loginBtn.onclick = function() {
-  loginModal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-closeLogin.onclick = function() {
-  loginModal.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == loginModal) {
-    loginModal.style.display = "none";
+  if (closeLogin) {
+    closeLogin.onclick = function() {
+      if (loginModal) loginModal.style.display = "none";
+    }
   }
-}
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
+  window.onclick = function(event) {
+    if (event.target == loginModal) {
+      loginModal.style.display = "none";
+    }
+  }
 
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
     });
   });
-});
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('.join-btn').addEventListener('click', function() {
-    window.location.href = 'Tournament.html';
-  });
+
+  const joinBtn = document.querySelector('.join-btn');
+  if (joinBtn) {
+    joinBtn.addEventListener('click', function() {
+      window.location.href = 'Tournament.html';
+    });
+  }
 });
