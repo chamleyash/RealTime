@@ -1739,7 +1739,13 @@ body.active { overflow-y: hidden; }
    * TEAM 
    */
 
-  .team-list { gap: 20px; }
+  .team-list { gap: 50px; }
+
+  
+  .team-list img{
+    width: 200px;
+    height: auto;
+  }
 
 
 
