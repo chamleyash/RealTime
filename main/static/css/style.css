@@ -1868,6 +1868,7 @@ body.active { overflow-y: hidden; }
   font-size: 1em;
   color: white;
   transition: .35s;
+  pointer-events: none;
 }
 
 .input-box input:focus~label,
