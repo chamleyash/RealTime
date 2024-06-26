@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Success</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="header">
+        <div class="container">
+            <a href="{% url 'index' %}" class="logo"><img src="{% static 'images/logo.png' %}" alt="GameX logo"></a>
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li><a href="{% url 'index' %}" class="navbar-link">Home</a></li>
+                    <li><a href="{% url 'index' %}#about" class="navbar-link">About</a></li>
+                    <li><a href="{% url 'tournament' %}" class="navbar-link">Tournament</a></li>
+                    <li><a href="{% url 'index' %}#team" class="navbar-link">Team</a></li>
+                    <li><a href="{% url 'index' %}#contact" class="navbar-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Registration Successful</h1>
+        <p>Thank you for registering for the tournament. We will contact you with further details.</p>
+        <a href="{% url 'index' %}" class="btn-submit">Return to Home</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-brand-wrapper">
+                    <a href="#" class="logo">
+                        <img src="{% static 'images/logo.png' %}" alt="Esports logo">
+                    </a>
+                    <div class="footer-menu-wrapper">
+                        <ul class="footer-menu-list">
+                            <li><a href="{% url 'index' %}" class="footer-menu-link">Home</a></li>
+                            <li><a href="{% url 'index' %}#about" class="footer-menu-link">About</a></li>
+                            <li><a href="{% url 'tournament' %}" class="footer-menu-link">Tournament</a></li>
+                            <li><a href="{% url 'index' %}#team" class="footer-menu-link">Team</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">Code with ACE</p>
+                <img src="{% static 'images/footer-bottom-img.png' %}" alt="Online payment companies logo">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
