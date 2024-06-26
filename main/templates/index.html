@@ -175,7 +175,9 @@
           <p class="tournament-text">
             Unleash your gaming skills and talents by joining us now!
           </p>
-          <button class="btn btn-primary join-btn">Join with us</button>
+          <form action="{% url 'tournament' %}">
+            <button type="submit" class="btn btn-primary">Join with Us</button>
+        </form>
         </div>
         <div class="tournament-prize">
           <h2 class="h3 tournament-prize-title">Prize pool</h2>

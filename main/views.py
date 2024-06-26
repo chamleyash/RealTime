@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import TeamForm
+from .models import Teammate
 
 def index(request):
     return render(request, 'index.html')
