@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,10 +9,10 @@
   <title>Tournament Registrations - ACE Esports</title>
 
   <!-- favicon link -->
-  <link rel="shortcut icon" href="../static/images/logo.png" type="image/svg+xml">
+  <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/svg+xml">
 
   <!-- custom css link -->
-  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
   <!-- google font link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,7 +97,6 @@
     padding-top: 50px;
     }
 
-    
   </style>
 </head>
 
@@ -104,8 +104,8 @@
   <header class="header">
     <div class="overlay" data-overlay></div>
     <div class="container">
-      <a href="index.html" class="logo">
-        <img src="../static/images/logo.png" alt="GameX logo">
+      <a href="{% url 'index' %}" class="logo">
+        <img src="{% static 'images/logo.png' %}" alt="GameX logo">
       </a>
       <button class="nav-open-btn" data-nav-open-btn>
         <ion-icon name="menu-outline"></ion-icon>
@@ -113,18 +113,18 @@
       <nav class="navbar" data-nav>
         <div class="navbar-top">
           <a href="#" class="logo">
-            <img src="../static/images/logo.png" alt="GameX logo">
+            <img src="{% static 'images/logo.png' %}" alt="GameX logo">
           </a>
           <button class="nav-close-btn" data-nav-close-btn>
             <ion-icon name="close-outline"></ion-icon>
           </button>
         </div>
         <ul class="navbar-list">
-          <li><a href="index.html" class="navbar-link">Home</a></li>
-          <li><a href="index.html#about" class="navbar-link">About</a></li>
-          <li><a href="Tournament.html" class="navbar-link">Tournament</a></li>
-          <li><a href="index.html#team" class="navbar-link">Team</a></li>
-          <li><a href="index.html#contact" class="navbar-link">Contact</a></li>
+          <li><a href="{% url 'index' %}" class="navbar-link">Home</a></li>
+          <li><a href="{% url 'index' %}#about" class="navbar-link">About</a></li>
+          <li><a href="{% url 'tournament' %}" class="navbar-link">Tournament</a></li>
+          <li><a href="{% url 'index' %}#team" class="navbar-link">Team</a></li>
+          <li><a href="{% url 'index' %}#contact" class="navbar-link">Contact</a></li>
         </ul>
         <ul class="nav-social-list">
           <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
@@ -174,7 +174,6 @@
     </div>
 </div>
 
-
   <main>
     <article>
       <section class="tournament-registration" id="tournament-registration">
@@ -184,52 +183,52 @@
             <p class="section-text">Register for our exciting upcoming tournaments and compete for amazing prize pools. Choose your tournament and secure your spot now!</p>
             <div class="tournament-list">
               <div class="tournament-item">
-                <img src="../static/images/pubg.jpg" alt="BGMI Tournament">
+                <img src="{% static 'images/pubg.jpg' %}" alt="BGMI Tournament">
                 <h3 class="h3 tournament-title">BGMI Championship</h3>
                 <p class="tournament-details">Date: July 20, 2024</p>
                 <p class="tournament-details">Entry Fee: ₹1000</p>
                 <p class="tournament-details">Prize Money: ₹1000</p>
-                <a href="register.html?game=bgmi" class="btn btn-primary">Register Now</a>
+                <a href="{% url 'register' %}?game=bgmi" class="btn btn-primary">Register Now</a>
               </div>
               <div class="tournament-item">
-                <img src="../static/images/valo.jpg" alt="Valorant Tournament">
+                <img src="{% static 'images/valo.jpg' %}" alt="Valorant Tournament">
                 <h3 class="h3 tournament-title">Valorant Showdown</h3>
                 <p class="tournament-details">Date: August 15, 2024</p>
                 <p class="tournament-details">Entry Fee: ₹1000</p>
                 <p class="tournament-details">Prize Money: ₹15,000</p>
-                <a href="register.html?game=valorant" class="btn btn-primary">Register Now</a>
+                <a href="{% url 'register' %}?game=valorant" class="btn btn-primary">Register Now</a>
               </div>
               <div class="tournament-item">
-                <img src="../static/images/cs.jpg" alt="CSGO Tournament">
+                <img src="{% static 'images/cs.jpg' %}" alt="CSGO Tournament">
                 <h3 class="h3 tournament-title">CSGO Masters</h3>
                 <p class="tournament-details">Date: September 10, 2024</p>
                 <p class="tournament-details">Entry Fee: ₹1000</p>
                 <p class="tournament-details">Prize Money: ₹20,000</p>
-                <a href="register.html?game=csgo" class="btn btn-primary">Register Now</a>
+                <a href="{% url 'register' %}?game=csgo" class="btn btn-primary">Register Now</a>
               </div>
               <div class="tournament-item">
-                <img src="../static/images/ff.jpg" alt="Free Fire Tournament">
+                <img src="{% static 'images/ff.jpg' %}" alt="Free Fire Tournament">
                 <h3 class="h3 tournament-title">Free Fire Frenzy</h3>
                 <p class="tournament-details">Date: October 5, 2024</p>
                 <p class="tournament-details">Entry Fee: ₹1000</p>
                 <p class="tournament-details">Prize Money: ₹12,000</p>
-                <a href="register.html?game=freefire" class="btn btn-primary">Register Now</a>
+                <a href="{% url 'register' %}?game=freefire" class="btn btn-primary">Register Now</a>
               </div>
               <div class="tournament-item">
-                <img src="../static/images/fortnite4k.jpg" alt="Fortnite Tournament">
+                <img src="{% static 'images/fortnite4k.jpg' %}" alt="Fortnite Tournament">
                 <h3 class="h3 tournament-title">Fortnite Battle</h3>
                 <p class="tournament-details">Date: November 20, 2024</p>
                 <p class="tournament-details">Entry Fee: ₹1000</p>
                 <p class="tournament-details">Prize Money: ₹18,000</p>
-                <a href="register.html?game=fortnite" class="btn btn-primary">Register Now</a>
+                <a href="{% url 'register' %}?game=fortnite" class="btn btn-primary">Register Now</a>
               </div>
               <div class="tournament-item">
-                <img src="../static/images/cod.jpg" alt="CoD Tournament">
+                <img src="{% static 'images/cod.jpg' %}" alt="CoD Tournament">
                 <h3 class="h3 tournament-title">Call of Duty Warfare</h3>
                 <p class="tournament-details">Date: December 15, 2024</p>
                 <p class="tournament-details">Entry Fee: ₹1000</p>
                 <p class="tournament-details">Prize Money: ₹25,000</p>
-                <a href="register.html?game=cod" class="btn btn-primary">Register Now</a>
+                <a href="{% url 'register' %}?game=cod" class="btn btn-primary">Register Now</a>
               </div>
             </div>
           </div>
@@ -243,14 +242,14 @@
       <div class="container">
         <div class="footer-brand-wrapper">
           <a href="#" class="logo">
-            <img src="../static/images/logo.png" alt="Esports logo">
+            <img src="{% static 'images/logo.png' %}" alt="Esports logo">
           </a>
           <div class="footer-menu-wrapper">
             <ul class="footer-menu-list">
-              <li><a href="index.html" class="footer-menu-link">Home</a></li>
-              <li><a href="index.html#about" class="footer-menu-link">About</a></li>
-              <li><a href="index.html#tournament" class="footer-menu-link">Tournament</a></li>
-              <li><a href="index.html#team" class="footer-menu-link">Team</a></li>
+              <li><a href="{% url 'index' %}" class="footer-menu-link">Home</a></li>
+              <li><a href="{% url 'index' %}#about" class="footer-menu-link">About</a></li>
+              <li><a href="{% url 'tournament' %}" class="footer-menu-link">Tournament</a></li>
+              <li><a href="{% url 'index' %}#team" class="footer-menu-link">Team</a></li>
             </ul>
           </div>
         </div>
@@ -259,7 +258,7 @@
   </footer>
 
   <!-- ionicon link -->
-   <script src="../static/js/script.js"></script>
+  <script src="{% static 'js/script.js' %}"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 

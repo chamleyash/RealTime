@@ -428,7 +428,7 @@ body.active { overflow-y: hidden; }
 \*-----------------------------------*/
 
 .section-wrapper {
-  background: url("../images/section-wrapper-bg.jpg") no-repeat;
+  background: hsl(234, 14%, 14%);
   background-size: cover;
   background-position: center;
 }
@@ -447,7 +447,7 @@ body.active { overflow-y: hidden; }
 .character { display: none; }
 
 .about-content {
-  background: var(--raisin-black-1);
+  background: hsl(234, 14%, 14%);
   color: var(--white);
   padding: 40px 20px;
   border-radius: 4px;
