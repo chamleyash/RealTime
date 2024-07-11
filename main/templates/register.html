@@ -23,7 +23,7 @@
 
 .container {
     width: 75%;
-    {% comment %} margin: auto; {% endcomment %}
+    margin: auto;
     margin: auto;
 }
 
@@ -179,7 +179,8 @@
 
     <div class="container form-container">
         <h2>Register for Tournament</h2>
-        <form id="registrationForm">
+        <form id="registrationForm" method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
             <div class="form-group">
                 <label for="teamLeaderName">Team Leader In-Game Name:</label>
                 <input type="text" id="teamLeaderName" name="teamLeaderName" required>
@@ -194,7 +195,7 @@
             </div>
             <div class="form-row" id="teammates"></div>
             <button type="submit" class="btn-submit">Submit</button>
-        </form>
+        </form>        
     </div>
 
     <!-- Footer -->

@@ -34,9 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  const wrapper = document.querySelector('.wrapper');
   const loginModal = document.getElementById("loginModal");
   const loginBtn = document.querySelector(".btn-sign_in");
   const closeLogin = loginModal ? loginModal.getElementsByClassName("icon-close")[0] : null;
+  const registerLink = document.querySelector('.register-link');
 
   if (loginBtn) {
     loginBtn.onclick = function() {
@@ -65,10 +67,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  const joinBtn = document.querySelector('.join-btn');
+  const joinBtn = document.querySelector('.join-btn'); 
   if (joinBtn) {
     joinBtn.addEventListener('click', function() {
       window.location.href = 'Tournament.html';
     });
   }
+  registerLink.addEventListener('click', () => {
+    document.querySelector('.form-box.login').classList.remove('active');
+    document.querySelector('.form-box.login').classList.add('move-left');
+    document.querySelector('.form-box.register').classList.add('active');
+    document.querySelector('.form-box.register').classList.remove('move-right');
+    wrapper.classList.add('register-popup');
+  });
 });
