@@ -11,34 +11,29 @@ def tournament(request):
 
 def register(request):
     if request.method == 'POST':
-        team_leader_name = request.POST.get('teamLeaderName')
-        team_leader_email = request.POST.get('teamLeaderEmail')
-        team_leader_id = request.POST.get('teamLeaderID')
+        tean_name = request.POST['teamName']
+        team_leader_name = request.POST['teamLeaderName']
+        team_leader_email = request.POST['teamLeaderEmail']
+        team_leader_id = request.POST['teamLeaderID']
+        game_name = request.POST['gameName']  # Get the game name from the form
 
-        team = Team(
-            team_name=team_leader_name,  # You might want to change this if the team name is different
+        new_team = Team(
             team_leader_name=team_leader_name,
             team_leader_email=team_leader_email,
-            team_leader_id=team_leader_id
+            team_leader_id=team_leader_id,
+            game_name=game_name  # Save the game name
         )
-        team.save()
+        new_team.save()
 
-        for i in range(1, 6):  # Assuming a maximum of 5 teammates
-            teammate_name = request.POST.get(f'teammate{i}Name')
-            if teammate_name:
-                Teammate.objects.create(team=team, name=teammate_name)
-
-        # Send confirmation email
         send_mail(
-            'Tournament Registration Successful',
-            f'Hello {team_leader_name},\n\nYou have successfully registered for the tournament.\n\nBest regards,\nTournament Team',
-            'officialacesports1@gmail.com',  # Replace with your email
+            'Registration Confirmation',
+            f'Thank you for registering, {team_leader_name}. You have registered for the {game_name} tournament.',
+            'from@example.com',
             [team_leader_email],
             fail_silently=False,
         )
-
-        return redirect('success')  # Change this to your success URL name or view
-
+        
+        return redirect('success')
     return render(request, 'register.html')
 def success(request):
     return render(request, 'success.html')
