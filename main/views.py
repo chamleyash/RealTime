@@ -27,8 +27,9 @@ def register(request):
 
         send_mail(
             'Registration Confirmation',
-            f'Thank you for registering, {team_leader_name}. You have registered for the {game_name} tournament.',
-            'from@example.com',
+            f'Thank you for registering, {team_leader_name}. You have registered for the {game_name} tournament.
+            \n\nBest regards,\nTournament Team',
+            'officialaceesports1@gmail.com',
             [team_leader_email],
             fail_silently=False,
         )
